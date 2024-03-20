@@ -39,7 +39,7 @@ public class EventController : ControllerBase
         }
         return BadRequest(result);
     }
-    [HttpGet("get/{id}"), Authorize(Roles = "Admin")]
+    [HttpGet("get/{id}")]
     public async Task<IActionResult> GetById([FromRoute] Guid id)
     {
         var result = await _eventService.GetByIdAsync(id);
